@@ -1,0 +1,27 @@
+<div class="pBarContainer">
+	<div class="pBarRoller container col-lg-12" data-limit="{{this.limit}}">
+		{{#each this.bars}}
+			<div class="poc-bars col-lg-12 col-md-12 col-sm-12" id="counter{{@index}}_bar" data-counter="{{this}}">
+				<progress value="{{this}}" max="{{this.limit}}"></progress>
+			</div>
+		{{/each}}
+	</div>
+	<div class="pBarButtons">
+		<div class="poc-dropDown col-lg-6 col-md-6 col-sm-4">
+			 <div class="dropdown">
+			    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Progress Bar <span class="caret"></span></button>
+			    <ul class="dropdown-menu">
+				    {{#each this.bars}}
+			      		<li><a href="#" data-bind="counter{{@index}}_bar">Progress bar {{@index}}</a></li>
+			      	{{/each}}
+			    </ul>
+			  </div>
+			</div>
+		</div>
+		<div class="poc-buttons col-lg-6 col-md-6 col-sm-8">
+			{{#each this.buttons}}
+				<buttons id="pbuttons0{{@index}}" class="btn">{{this}}</buttons>
+			{{/each}}
+		</div>
+	</div>
+</div>

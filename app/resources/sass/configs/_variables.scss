@@ -1,0 +1,34 @@
+$main-transition-speed: 0.2s;
+
+// Header Vars
+$head_hgt:          140px;
+$head_line:         8px;
+
+$head_hgt_md:       100px;
+$head_line_md:      7px;
+
+$head_hgt_sm:       82px;
+$head_line_sm:      6px;
+
+$offCanvas_dur:     0.15s;
+$offCanvas_close:   64px;
+
+// Side Margins of Page
+$page-margin:       60px;
+$page-margin-sm:    20px;
+
+// Alerts Bar
+$alerts_hgt:        42px;
+
+$aside-width:       320px;
+
+
+// LTR/RTL DIRECTIONS
+// ----------------------------------
+$default-float:         left  !default;
+$opposite-direction:    right !default;
+
+// CUSTOM BREAKPOINTS
+// ----------------------------------
+$screen-mdMid:      840px;
+
