@@ -30,9 +30,11 @@ progressBar.prototype._bindEvents = function() {
 progressBar.prototype._calculateProgress=function(_elemInst){
 	var $self=this;
 	var increasedConunt  =  Number(_elemInst.getAttribute('data-counter'));
-	var _division = $self.limit/increasedConunt
+	var _division = Number((increasedConunt/$self.limit)*100).toFixed(2);
+	_elemInst.firstElementChild.style.width= _division+'%';
+	_elemInst.lastElementChild.innerHTML= _division+'%';
 	if( _division > 1){
-		alert(0)
+		//alert(0)
 	}else{
 
 	}
