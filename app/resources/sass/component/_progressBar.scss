@@ -1,29 +1,76 @@
-.poc-bars {
-	border:1px solid #000;
-	margin-bottom: 10px;
-	position :relative;
-	height : 30px;
-	padding :0;
-	box-sizing : border-box;
-	overflow:hidden;
-	.pBarPercent{
-		position: absolute;
-		width : 100%;
-		margin:0;
-		text-align : center;
-		z-index:20;
-		padding: 5px;
-    	box-sizing: border-box;
+#boxModel{
+	.pBarContainer.container{
+	    margin:0 auto;
+	    padding:0 15px;
+	    @media (min-width: 320px){
+	        width: 320px;
+	    }
+	    @media (min-width: 768px){
+	        width: 750px;
+	    }
+	    @media (min-width: 992px){
+	        width: 970px;
+	    }
+	    @media (min-width: 1200px){
+	    	width : 1170px;
+	    }
+	    .pBarButtons{
+	    	> .poc-inlineParent{
+	    		display : inline-block;
+	    		vertical-align : middle;
+	    	}
+	    	button.btn {
+			    padding: 7px 15px;
+			    border: 0;
+			    border-radius: 5px;
+			    background: rgb(38, 130, 195);
+			    color: #fff;
+			    margin-left: 10px;
+			    width: 50px;
+			    font-weight: bold;
+			    font-size: 14px;
+			    cursor: pointer;
+				&:hover{
+					background:rgb(38, 195, 144);
+				}
+			}
+			select.dropdown-menu {
+			    padding: 7px 15px;
+			    border-radius: 3px;
+			    font-size: small;
+			}
+	    }
+	    .pBarRoller{
+			.poc-bars {
+				border:1px solid #000;
+				margin-bottom: 10px;
+				position :relative;
+				height : 30px;
+				padding :0;
+				box-sizing : border-box;
+				overflow:hidden;
+				.pBarPercent{
+					position: absolute;
+					width : 100%;
+					margin:0;
+					text-align : center;
+					z-index:20;
+					padding: 5px;
+			    	box-sizing: border-box;
+				}
+				.pBarStatus{
+					position: absolute;
+					z-index:10;
+					height:100%;
+					&.blue {
+					    background: blue;
+					}
+					&.red{
+						background: red;
+					}
+				}
+			}
+	    }
 	}
-	.pBarStatus{
-		position: absolute;
-		z-index:10;
-		height:100%;
-		&.blue {
-		    background: blue;
-		}
-		&.red{
-			background: red;
-		}
-	}
+	
 }

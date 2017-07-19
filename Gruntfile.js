@@ -248,11 +248,7 @@ module.exports = function(grunt) {
                     '<%= config.tmp %>/<%= config.assetPath %>/js/poc.scripts.js': [
                         '<%= config.app %>/<%= config.assetPath %>/js/plugin/*.js',
                         '<%= config.app %>/<%= config.assetPath %>/js/poc.main.js',
-                    ],
-                    '<%= config.tmp %>/<%= config.assetPath %>/js/poc.vendor.js': [
-                        'bower_components/jquery/dist/jquery.min.js',
-                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js'
-                    ],
+                    ]
 
                 }
             }
@@ -261,14 +257,7 @@ module.exports = function(grunt) {
         copy: {
             dev: {
                 files: [
-                    {
-                        expand: true,
-                        src: [
-                            'bower_components/modernizr/modernizr.js',
-                            'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
-                        ],
-                        dest: '<%= config.tmp %>'
-                    },
+                    
                     {
                         expand: true,
                         cwd: '<%= config.app %>',
@@ -277,14 +266,7 @@ module.exports = function(grunt) {
                             '<%= config.assetPath %>/js/**/*.js'
                         ]
                     },
-                    {
-                        expand: true,
-                        flatten: true,
-                        dest: '<%= config.tmp %>/<%= config.assetPath %>/js/vendor',
-                        src: [
-                            'bower_components/modernizr/modernizr.js'
-                        ]
-                    }
+                    
                 ]
             },
             
@@ -305,10 +287,7 @@ module.exports = function(grunt) {
             options: { },
             prod: {
                 files: {
-                    '<%= config.dist %>/<%= config.assetPath %>/js/poc.scripts.js': ['<%= config.tmp %>/<%= config.assetPath %>/js/poc.scripts.js'],
-                    '<%= config.dist %>/<%= config.assetPath %>/js/poc.vendor.js': [
-                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-                    ]
+                    '<%= config.dist %>/<%= config.assetPath %>/js/poc.scripts.js': ['<%= config.tmp %>/<%= config.assetPath %>/js/poc.scripts.js']
                 }
             },
         },
@@ -343,19 +322,6 @@ module.exports = function(grunt) {
             gold: [
                 'compass:prod'
             ],
-        },
-
-        modernizr: {
-            dist: {
-                'devFile' : 'bower_components/modernizr/modernizr.js',
-                'outputFile' : '<%= config.dist %>/<%= config.assetPath %>/js/modernizr.js',
-                'uglify' : true
-            },
-            tmp: {
-                'devFile' : 'bower_components/modernizr/modernizr.js',
-                'outputFile' : '<%= config.tmp %>/<%= config.assetPath %>/js/modernizr.js',
-                'uglify' : true
-            }            
         },
 
         compress: {
@@ -399,7 +365,7 @@ module.exports = function(grunt) {
             'recursive-compass:dev',
             'concat:prod',
             'assemble:dev',
-            'modernizr',
+            //'modernizr',
             'connect:livereload',
             'watch'
         ]);
@@ -421,7 +387,7 @@ module.exports = function(grunt) {
         'concat:prod',
         'uglify:prod',
         'usemin',
-        'modernizr'
+        //'modernizr'
     ]);
 
     grunt.registerTask('default', []);

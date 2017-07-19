@@ -5,7 +5,7 @@ module.exports.register = function (Handlebars, options) {
     Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
         lvalue = parseFloat(lvalue);
         rvalue = parseFloat(rvalue);
-        console.log(options)
+
         return {
             "+": lvalue + rvalue,
             "-": lvalue - rvalue,
