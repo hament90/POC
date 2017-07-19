@@ -1,9 +1,9 @@
 <div class="pBarContainer container">
 	<div class="pBarRoller" data-limit="{{this.limit}}">
 		{{#each this.bars}}
-			<div class="poc-bars col-lg-12 col-md-12 col-sm-12" id="counter{{@index}}_bar" data-counter="{{this}}">
-				<div class="pBarStatus {{#compare this '<' ../this.limit}}blue{{else}}red{{/compare}}" style="width: {{math ../this.limit '/' this}}px; height:100%;"></div>
-				<div class="pBarPercent text-center">{{math ../this.limit '/' this}}</div> 
+			<div class="poc-bars col-lg-12 col-md-12 col-sm-12" id="counter{{@index}}_bar" data-counter="{{this}}" data-percent="{{math ../this.limit '/' this}}">
+				<div class="pBarStatus {{#compare this '<' ../this.limit}}blue{{else}}red{{/compare}}" style="width: {{math ../this.limit '/' this}}%;"></div>
+				<div class="pBarPercent text-center">{{math ../this.limit '/' this}}%</div> 
 			</div>
 		{{/each}}
 	</div>
@@ -21,7 +21,7 @@
 		</div>
 		<div class="poc-buttons col-lg-6 col-md-6 col-sm-8">
 			{{#each this.buttons}}
-				<button id="pbuttons0{{@index}}" class="btn">{{this}}</button>
+				<button id="pbuttons0{{@index}}" class="btn" data-ref="counter0_bar" value="{{this}}">{{this}}</button>
 			{{/each}}
 		</div>
 	</div>

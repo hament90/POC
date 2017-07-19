@@ -246,11 +246,12 @@ module.exports = function(grunt) {
             prod: {
                 files: {
                     '<%= config.tmp %>/<%= config.assetPath %>/js/poc.scripts.js': [
-                        '<%= config.app %>/<%= config.assetPath %>/js/poc.main.js',
                         '<%= config.app %>/<%= config.assetPath %>/js/plugin/*.js',
+                        '<%= config.app %>/<%= config.assetPath %>/js/poc.main.js',
                     ],
                     '<%= config.tmp %>/<%= config.assetPath %>/js/poc.vendor.js': [
-                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
+                        'bower_components/jquery/dist/jquery.min.js',
+                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js'
                     ],
 
                 }

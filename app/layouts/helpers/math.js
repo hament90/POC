@@ -10,7 +10,7 @@ module.exports.register = function (Handlebars, options) {
             "+": lvalue + rvalue,
             "-": lvalue - rvalue,
             "*": lvalue * rvalue,
-            "/": lvalue / rvalue,
+            "/": (lvalue / rvalue).toFixed(2),
             "%": lvalue % rvalue
         }[operator];
     });

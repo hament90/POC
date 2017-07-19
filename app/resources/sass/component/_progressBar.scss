@@ -2,12 +2,28 @@
 	border:1px solid #000;
 	margin-bottom: 10px;
 	position :relative;
-	padding : 10px;
+	height : 30px;
+	padding :0;
 	box-sizing : border-box;
+	
 	.pBarPercent{
-		//position : absolute;
+		position: absolute;
 		width : 100%;
 		margin:0;
 		text-align : center;
+		z-index:20;
+		padding: 5px;
+    	box-sizing: border-box;
+	}
+	.pBarStatus{
+		position: absolute;
+		z-index:10;
+		height:100%;
+		&.blue {
+		    background: blue;
+		}
+		&.red{
+			background: red;
+		}
 	}
 }
