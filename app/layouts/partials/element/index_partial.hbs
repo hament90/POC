@@ -1,13 +1,14 @@
-<div class="pBarContainer">
-	<div class="pBarRoller container col-lg-12" data-limit="{{this.limit}}">
+<div class="pBarContainer container">
+	<div class="pBarRoller" data-limit="{{this.limit}}">
 		{{#each this.bars}}
 			<div class="poc-bars col-lg-12 col-md-12 col-sm-12" id="counter{{@index}}_bar" data-counter="{{this}}">
-				<progress value="{{this}}" max="{{this.limit}}"></progress>
+				<div class="pBarStatus {{#compare this '<' ../this.limit}}blue{{else}}red{{/compare}}" style="width: {{math ../this.limit '/' this}}px; height:100%;"></div>
+				<div class="pBarPercent text-center">{{math ../this.limit '/' this}}</div> 
 			</div>
 		{{/each}}
 	</div>
 	<div class="pBarButtons">
-		<div class="poc-dropDown col-lg-6 col-md-6 col-sm-4">
+		<div class="poc-dropDown col-lg-3 col-md-6 col-sm-4">
 			 <div class="dropdown">
 			    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Progress Bar <span class="caret"></span></button>
 			    <ul class="dropdown-menu">
@@ -20,7 +21,7 @@
 		</div>
 		<div class="poc-buttons col-lg-6 col-md-6 col-sm-8">
 			{{#each this.buttons}}
-				<buttons id="pbuttons0{{@index}}" class="btn">{{this}}</buttons>
+				<button id="pbuttons0{{@index}}" class="btn">{{this}}</button>
 			{{/each}}
 		</div>
 	</div>

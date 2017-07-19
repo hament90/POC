@@ -1,3 +1,13 @@
-body{
-	font-size: 10px;
+.poc-bars {
+	border:1px solid #000;
+	margin-bottom: 10px;
+	position :relative;
+	padding : 10px;
+	box-sizing : border-box;
+	.pBarPercent{
+		//position : absolute;
+		width : 100%;
+		margin:0;
+		text-align : center;
+	}
 }
